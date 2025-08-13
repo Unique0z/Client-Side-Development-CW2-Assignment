@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Event Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EventHub</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="my-tickets.html">My Tickets</a></li>
+                <li><button id="login-btn">Login/Sign Up</button></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="event-details">
+            <div class="event-image">
+                <img id="detail-event-image" src="" alt="Event Image">
+            </div>
+            <div class="event-info">
+                <h1 id="event-title">Event Title</h1>
+                <div class="event-meta">
+                    <p><i class="fas fa-calendar"></i> <span id="event-date">Date</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="event-location">Location</span></p>
+                    <p><i class="fas fa-tag"></i> <span id="event-price">Price</span></p>
+                    <p><i class="fas fa-users"></i> <span id="event-capacity">Capacity</span></p>
+                </div>
+                <p class="event-description" id="event-description">Event description will be loaded here.</p>
+                
+                <div class="countdown">
+                    <h3>Event starts in:</h3>
+                    <div class="countdown-timer">
+                        <div><span id="days">00</span><small>Days</small></div>
+                        <div><span id="hours">00</span><small>Hours</small></div>
+                        <div><span id="minutes">00</span><small>Minutes</small></div>
+                        <div><span id="seconds">00</span><small>Seconds</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ticket-purchase">
+                <h2>Get Your Tickets</h2>
+                <form id="purchase-form">
+                    <input type="hidden" id="event-id" value="">
+                    <div class="form-group">
+                        <label for="ticket-type">Ticket Type:</label>
+                        <select id="ticket-type" required>
+                            <option value="general">General Admission</option>
+                            <option value="vip">VIP</option>
+                            <option value="premium">Premium</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" min="1" max="10" value="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="full-name">Full Name:</label>
+                        <input type="text" id="full-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sort-code">Sort Code:</label>
+                        <input type="text" id="sort-code" placeholder="123456" required>
+                    </div>
+                    <button type="submit" class="purchase-btn">Purchase Tickets</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 EventHub. All rights reserved.</p>
+        <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    </footer>
+
+    <!-- Login/Signup Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Welcome to EventHub</h2>
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+            
+            <div id="login" class="tab-content active">
+                <form id="login-form">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p id="login-message"></p>
+            </div>
+            
+            <div id="signup" class="tab-content">
+                <form id="signup-form">
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p id="signup-message"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
